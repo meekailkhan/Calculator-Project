@@ -23,6 +23,19 @@ const doutBtn = tagGenrator("button","class","doutBtn",calculator,".",".")
 
 
 
+calculator.addEventListener("click",(e)=>{
+    // console.dir(e.target)
+    e.preventDefault();
+    e.stopPropagation();
+
+    if(e.target.classList[0]=== "modularBtn"){
+        console.log("click");
+        input.innerText = modularBtn.value
+    }
+    
+
+})
+
 
 
 
