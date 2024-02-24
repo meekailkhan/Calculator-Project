@@ -60,12 +60,65 @@ function tagGenrator(tag,attName,attValue,parent,text,value,event){
 
             // if(e.tagName !== )   
             console.log(e)
-
-            input.value += e.target.value
-
-            
-
-            
+            if(e.target.classList[0]== "cancelBtn"){
+                input.value = ""
+            }
+            if(e.target.classList[0] == "modularBtn"){
+                if(!"%" == true){
+                    input.value += modularBtn.value
+                }
+            }
+            if(e.target.classList[0] == "devideBtn" ){
+                input.value += devideBtn.value
+            }
+            if(e.target.classList[0] == "seventBtn"){
+                input.value += seventBtn.value
+            }
+            if(e.target.classList[0] == "eightBtn"){
+                input.value += eightBtn.value
+            }
+            if(e.target.classList[0] == "nineBtn"){
+                input.value += nineBtn.value
+            }
+            if(e.target.classList[0] == "multiBtn"){
+                input.value += multiBtn.value
+            }
+            if(e.target.classList[0] == "fourBtn"){
+                input.value += fourBtn.value
+            }
+            if(e.target.classList[0] == "fiveBtn"){
+                input.value += fiveBtn.value
+            }
+            if(e.target.classList[0] == "sixBtn"){
+                input.value += sixBtn.value
+            }
+            if(e.target.classList[0] == "subBtn"){
+                input.value += subBtn.value
+            }
+            if(e.target.classList[0] == "oneBtn"){
+                input.value += oneBtn.value
+            }
+            if(e.target.classList[0] == "twoBtn"){
+                input.value += twoBtn.value
+            }
+            if(e.target.classList[0] == "threeBtn"){
+                input.value += threeBtn.value
+            }
+            if(e.target.classList[0] == "plusBtn"){
+                input.value += plusBtn.value
+            }
+            if(e.target.classList[0] == "zeroBtn"){
+                input.value += zeroBtn.value
+            }
+            if(e.target.classList[0] == "dZeroBtn"){
+                input.value += dZeroBtn.value
+            }
+            if(e.target.classList[0] == "doutBtn"){
+                input.value += doutBtn.value
+            }
+            if(e.target.classList[0] == "equalBtn"){
+                input.value = eval(input.value)
+            }
         })
     }
 
