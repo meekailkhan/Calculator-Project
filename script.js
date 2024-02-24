@@ -1,6 +1,6 @@
 const container = tagGenrator("div","id","mainContainer",document.body);
+const input = tagGenrator ("input","class","input",mainContainer)
 const calculatorContainer = tagGenrator("div","id","calculator",mainContainer,null,null,"click");
-const input = tagGenrator ("input","class","input",calculator)
 const cancelBtn = tagGenrator("button","class","cancelBtn",calculator,"AC");
 const delBtn = tagGenrator("button","class","delBtn",calculator,"DEL");
 const modularBtn = tagGenrator("button","class","modularBtn",calculator,"%","%");
@@ -64,9 +64,7 @@ function tagGenrator(tag,attName,attValue,parent,text,value,event){
                 input.value = ""
             }
             if(e.target.classList[0] == "modularBtn"){
-                if(!"%" == true){
                     input.value += modularBtn.value
-                }
             }
             if(e.target.classList[0] == "devideBtn" ){
                 input.value += devideBtn.value
@@ -117,8 +115,12 @@ function tagGenrator(tag,attName,attValue,parent,text,value,event){
                 input.value += doutBtn.value
             }
             if(e.target.classList[0] == "equalBtn"){
+                if(input.value == ""){
+                    input.value = "0"
+                }
                 input.value = eval(input.value)
             }
+            
         })
     }
 
