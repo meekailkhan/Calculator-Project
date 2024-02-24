@@ -1,5 +1,5 @@
 const container = tagGenrator("div","id","mainContainer",document.body);
-const calculatorContainer = tagGenrator("div","id","calculator",mainContainer);
+const calculatorContainer = tagGenrator("div","id","calculator",mainContainer,null,null,"click");
 const input = tagGenrator ("input","class","input",calculator)
 const cancelBtn = tagGenrator("button","class","cancelBtn",calculator,"AC");
 const delBtn = tagGenrator("button","class","delBtn",calculator,"DEL");
@@ -20,26 +20,24 @@ const plusBtn = tagGenrator("button","class","plusBtn",calculator,"+","+");
 const zeroBtn = tagGenrator("button","class","zeroBtn",calculator,"0","0");
 const dZeroBtn = tagGenrator("button","class","dZeroBtn",calculator,"00","00");
 const doutBtn = tagGenrator("button","class","doutBtn",calculator,".",".")
+const equalBtn = tagGenrator("button","class","equalBtn",calculator,"=","=")
 
+// input.innerText = "10"
 
+// calculator.addEventListener("click",function event(e){
+//     e.preventDefault();
+//     // console.log(e);
+//     console.log(e.target)
 
-calculator.addEventListener("click",(e)=>{
-    // console.dir(e.target)
-    e.preventDefault();
-    e.stopPropagation();
-
-    if(e.target.classList[0]=== "modularBtn"){
-        console.log("click");
-        input.innerText = modularBtn.value
-    }
-    
-
-})
+//     if(e.target.value === "9"){
+//         // input.value = "9"
+//     }
+// })
 
 
 
 
-function tagGenrator(tag,attName,attValue,parent,text,value,event,clas){
+function tagGenrator(tag,attName,attValue,parent,text,value,event){
     let elemetn = document.createElement(tag);
 
     if(!!attName&&attValue){
@@ -54,6 +52,24 @@ function tagGenrator(tag,attName,attValue,parent,text,value,event,clas){
     if(!!value){
         elemetn.value = value;
     }
+    
+    if(!!event){
+        elemetn.addEventListener(event,function(e){
+            e.preventDefault();
+            
+
+            // if(e.tagName !== )   
+            console.log(e)
+
+            input.value += e.target.value
+
+            
+
+            
+        })
+    }
+
+    return elemetn;
 }
 
 
