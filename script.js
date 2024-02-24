@@ -1,6 +1,6 @@
 const container = tagGenrator("div","id","mainContainer",document.body);
 const calculatorContainer = tagGenrator("div","id","calculator",mainContainer);
-const input = tagGenrator ("input","class","input",calculator)
+const input = tagGenrator ("input","class","input",calculator,null,null)
 const cancelBtn = tagGenrator("button","class","cancelBtn",calculator,"AC");
 const delBtn = tagGenrator("button","class","delBtn",calculator,"DEL");
 const modularBtn = tagGenrator("button","class","modularBtn",calculator,"%","%");
@@ -21,7 +21,7 @@ const zeroBtn = tagGenrator("button","class","zeroBtn",calculator,"0","0");
 const dZeroBtn = tagGenrator("button","class","dZeroBtn",calculator,"00","00");
 const doutBtn = tagGenrator("button","class","doutBtn",calculator,".",".")
 
-
+let str =""
 
 calculator.addEventListener("click",(e)=>{
     // console.dir(e.target)
@@ -30,7 +30,9 @@ calculator.addEventListener("click",(e)=>{
 
     if(e.target.classList[0]=== "modularBtn"){
         console.log("click");
-        input.innerText = modularBtn.value
+
+        str = e.target.innerHTML
+        input.innerText = str;
     }
     
 
