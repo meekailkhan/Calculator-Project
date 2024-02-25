@@ -131,7 +131,7 @@ function tagGenrator(tag,attName,attValue,parent,text,value,event){
 }
 
 
-
+console.log(window)
 
 
 
