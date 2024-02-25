@@ -118,6 +118,9 @@ function tagGenrator(tag,attName,attValue,parent,text,value,event){
                 if(input.value == ""){
                     input.value = "0"
                 }
+                if(Object.is(input.value,NaN)){
+                    input.value = "0"
+                }
                 input.value = eval(input.value)
             }
             
