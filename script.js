@@ -83,60 +83,55 @@ function tagGenrator(tag,attName,attValue,parent,text,value,event){
                 input.value = ""
             }
             if(e.target.classList[0] == "delBtn"){
-                let str = input.value
+                let str = input.value;
                 input.value = str.substring(0, str.length - 1);
             }
             if(e.target.classList[0] == "doutBtn"){
-                input.value += doutBtn.value
+                input.value += doutBtn.value;
             }
-            
 
             let str = input.value;
             let index = str.length-1;
+
             
             if(str[index] == modularBtn.value){
-                return str[index] = e.target.value
+                return;
             }
             if(str[index] ==  devideBtn.value){
-                return str[index] = e.target.value
+                return;
             }
             if(str[index] == multiBtn.value){
-                return str[index] = e.target.value
+                return;
             }
             if(str[index] == subBtn.value){
-                return str[index] = e.target.value
+                return;
             }
             if(str[index] == plusBtn.value){
-                return str[index] = e.target.value
+                return;
             }
 
             if(e.target.classList[0] == "modularBtn"){
-                return input.value += modularBtn.value  
+                return input.value += modularBtn.value;
             }
             if(e.target.classList[0] == "devideBtn" ){
-                input.value += devideBtn.value
+                input.value += devideBtn.value;
             }
             if(e.target.classList[0] == "multiBtn"){
-                input.value += multiBtn.value
+                input.value += multiBtn.value;
             }
             if(e.target.classList[0] == "subBtn"){
-                input.value += subBtn.value
+                input.value += subBtn.value;
             }
             if(e.target.classList[0] == "plusBtn"){
-                input.value += plusBtn.value
+                input.value += plusBtn.value;
             }
             if(e.target.classList[0] == "equalBtn"){
                 if(input.value == ""){
-                    input.value = "0"
+                    input.value = "0";
                 }
-            
-                input.value = eval(input.value)
+                input.value = eval(input.value);
             }
-            
-            
-            
         })
     }
-
     return elemetn;
 }
