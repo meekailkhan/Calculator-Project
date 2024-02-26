@@ -23,8 +23,6 @@ const doutBtn = tagGenrator("button","class","doutBtn",calculator,".",".")
 const equalBtn = tagGenrator("button","class","equalBtn",calculator,"=","=")
 
 
-
-
 function tagGenrator(tag,attName,attValue,parent,text,value,event){
     let elemetn = document.createElement(tag);
 
@@ -45,37 +43,17 @@ function tagGenrator(tag,attName,attValue,parent,text,value,event){
         elemetn.addEventListener(event,function(e){
             e.preventDefault();
             
-
-            // if(e.tagName !== )   
             console.log(e)
-            if(e.target.classList[0] == "delBtn"){
-                let str = input.value
-                input.value = str.substring(0, str.length - 1);
 
-            }  
-            
-
-
-            if(e.target.classList[0]== "cancelBtn"){
-                input.value = ""
-            }
-            if(e.target.classList[0] == "modularBtn"){
-                    input.value += modularBtn.value
-            }
-            if(e.target.classList[0] == "devideBtn" ){
-                input.value += devideBtn.value
-            }
             if(e.target.classList[0] == "seventBtn"){
                 input.value += seventBtn.value
             }
+            
             if(e.target.classList[0] == "eightBtn"){
                 input.value += eightBtn.value
             }
             if(e.target.classList[0] == "nineBtn"){
                 input.value += nineBtn.value
-            }
-            if(e.target.classList[0] == "multiBtn"){
-                input.value += multiBtn.value
             }
             if(e.target.classList[0] == "fourBtn"){
                 input.value += fourBtn.value
@@ -86,9 +64,6 @@ function tagGenrator(tag,attName,attValue,parent,text,value,event){
             if(e.target.classList[0] == "sixBtn"){
                 input.value += sixBtn.value
             }
-            if(e.target.classList[0] == "subBtn"){
-                input.value += subBtn.value
-            }
             if(e.target.classList[0] == "oneBtn"){
                 input.value += oneBtn.value
             }
@@ -98,17 +73,57 @@ function tagGenrator(tag,attName,attValue,parent,text,value,event){
             if(e.target.classList[0] == "threeBtn"){
                 input.value += threeBtn.value
             }
-            if(e.target.classList[0] == "plusBtn"){
-                input.value += plusBtn.value
-            }
             if(e.target.classList[0] == "zeroBtn"){
                 input.value += zeroBtn.value
             }
             if(e.target.classList[0] == "dZeroBtn"){
                 input.value += dZeroBtn.value
             }
+            if(e.target.classList[0]== "cancelBtn"){
+                input.value = ""
+            }
+            if(e.target.classList[0] == "delBtn"){
+                let str = input.value
+                input.value = str.substring(0, str.length - 1);
+            }
             if(e.target.classList[0] == "doutBtn"){
                 input.value += doutBtn.value
+            }
+            
+
+            let str = input.value;
+            let index = str.length-1;
+            
+            if(str[index] == modularBtn.value){
+                return str[index] = e.target.value
+            }
+            if(str[index] ==  devideBtn.value){
+                return str[index] = e.target.value
+            }
+            if(str[index] == multiBtn.value){
+                return str[index] = e.target.value
+            }
+            if(str[index] == subBtn.value){
+                return str[index] = e.target.value
+            }
+            if(str[index] == plusBtn.value){
+                return str[index] = e.target.value
+            }
+
+            if(e.target.classList[0] == "modularBtn"){
+                return input.value += modularBtn.value  
+            }
+            if(e.target.classList[0] == "devideBtn" ){
+                input.value += devideBtn.value
+            }
+            if(e.target.classList[0] == "multiBtn"){
+                input.value += multiBtn.value
+            }
+            if(e.target.classList[0] == "subBtn"){
+                input.value += subBtn.value
+            }
+            if(e.target.classList[0] == "plusBtn"){
+                input.value += plusBtn.value
             }
             if(e.target.classList[0] == "equalBtn"){
                 if(input.value == ""){
@@ -118,14 +133,10 @@ function tagGenrator(tag,attName,attValue,parent,text,value,event){
                 input.value = eval(input.value)
             }
             
+            
+            
         })
     }
 
     return elemetn;
 }
-
-
-console.log(window);
-
-
-
