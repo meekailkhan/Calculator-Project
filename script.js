@@ -8,7 +8,7 @@ const devideBtn = tagGenrator("button","class","devideBtn",calculator,"/","/");
 const seventBtn = tagGenrator("button","class","seventBtn",calculator,"7","7");
 const eightBtn = tagGenrator("button","class","eightBtn",calculator,"8","8");
 const nineBtn = tagGenrator("button","class","nineBtn",calculator,"9","9");
-const multiBtn = tagGenrator("button","class","multiBtn",calculator,"*","*");
+const multiBtn = tagGenrator("button","class","multiBtn",calculator,"x","*");
 const fourBtn = tagGenrator("button","class","fourBtn",calculator,"4","4");
 const fiveBtn = tagGenrator("button","class","fiveBtn",calculator,"5","5");
 const sixBtn = tagGenrator("button","class","sixBtn",calculator,"6","6");
@@ -21,18 +21,6 @@ const zeroBtn = tagGenrator("button","class","zeroBtn",calculator,"0","0");
 const dZeroBtn = tagGenrator("button","class","dZeroBtn",calculator,"00","00");
 const doutBtn = tagGenrator("button","class","doutBtn",calculator,".",".")
 const equalBtn = tagGenrator("button","class","equalBtn",calculator,"=","=")
-
-// input.innerText = "10"
-
-// calculator.addEventListener("click",function event(e){
-//     e.preventDefault();
-//     // console.log(e);
-//     console.log(e.target)
-
-//     if(e.target.value === "9"){
-//         // input.value = "9"
-//     }
-// })
 
 
 
@@ -60,6 +48,14 @@ function tagGenrator(tag,attName,attValue,parent,text,value,event){
 
             // if(e.tagName !== )   
             console.log(e)
+            if(e.target.classList[0] == "delBtn"){
+                let str = input.value
+                input.value = str.substring(0, str.length - 1);
+
+            }  
+            
+
+
             if(e.target.classList[0]== "cancelBtn"){
                 input.value = ""
             }
