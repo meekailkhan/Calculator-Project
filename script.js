@@ -42,7 +42,11 @@ function tagGenrator(tag,attName,attValue,parent,text,value,event){
     if(!!event){
         elemetn.addEventListener(event,function(e){
             e.preventDefault();
-            
+            e.stopPropagation();
+
+            if(e.target.tagName != "BUTTON"){
+                return
+            }
             console.log(e)
 
             if(e.target.classList[0] == "seventBtn"){
