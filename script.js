@@ -5,21 +5,21 @@ const cancelBtn = tagGenrator("button","class","cancelBtn",calculator,"AC");
 const delBtn = tagGenrator("button","class","delBtn",calculator,"DEL");
 const modularBtn = tagGenrator("button","class","modularBtn",calculator,"%","%");
 const devideBtn = tagGenrator("button","class","devideBtn",calculator,"/","/");
-const seventBtn = tagGenrator("button","class","seventBtn",calculator,"7","7");
-const eightBtn = tagGenrator("button","class","eightBtn",calculator,"8","8");
-const nineBtn = tagGenrator("button","class","nineBtn",calculator,"9","9");
+const seventBtn = tagGenrator("button","class","seventBtn btn",calculator,"7","7");
+const eightBtn = tagGenrator("button","class","eightBtn btn",calculator,"8","8");
+const nineBtn = tagGenrator("button","class","nineBtn btn",calculator,"9","9");
 const multiBtn = tagGenrator("button","class","multiBtn",calculator,"*","*");
-const fourBtn = tagGenrator("button","class","fourBtn",calculator,"4","4");
-const fiveBtn = tagGenrator("button","class","fiveBtn",calculator,"5","5");
-const sixBtn = tagGenrator("button","class","sixBtn",calculator,"6","6");
+const fourBtn = tagGenrator("button","class","fourBtn btn",calculator,"4","4");
+const fiveBtn = tagGenrator("button","class","fiveBtn btn",calculator,"5","5");
+const sixBtn = tagGenrator("button","class","sixBtn btn",calculator,"6","6");
 const subBtn = tagGenrator("button","class","subBtn",calculator,"-","-");
-const oneBtn = tagGenrator("button","class","oneBtn",calculator,"1","1");
-const twoBtn = tagGenrator("button","class","twoBtn",calculator,"2","2");
-const threeBtn = tagGenrator("button","class","threeBtn",calculator,"3","3");
-const plusBtn = tagGenrator("button","class","plusBtn",calculator,"+","+");
-const zeroBtn = tagGenrator("button","class","zeroBtn",calculator,"0","0");
-const dZeroBtn = tagGenrator("button","class","dZeroBtn",calculator,"00","00");
-const doutBtn = tagGenrator("button","class","doutBtn",calculator,".",".")
+const oneBtn = tagGenrator("button","class","oneBtn btn",calculator,"1","1");
+const twoBtn = tagGenrator("button","class","twoBtn btn",calculator,"2","2");
+const threeBtn = tagGenrator("button","class","threeBtn btn",calculator,"3","3");
+const plusBtn = tagGenrator("button","class","plusBtn btn",calculator,"+","+");
+const zeroBtn = tagGenrator("button","class","zeroBtn btn",calculator,"0","0");
+const dZeroBtn = tagGenrator("button","class","dZeroBtn btn",calculator,"00","00");
+const doutBtn = tagGenrator("button","class","doutBtn btn",calculator,".",".")
 const equalBtn = tagGenrator("button","class","equalBtn",calculator,"=","=")
 
 
@@ -40,9 +40,20 @@ function tagGenrator(tag,attName,attValue,parent,text,value,event){
     }
     
     if(!!event){
-        elemetn.addEventListener(event,function(e){
+        elemetn.addEventListener(event,eventFn)
+        function eventFn(e){
             e.preventDefault();
             e.stopPropagation();
+
+
+            
+
+            // let currentValue = e.target.value;
+
+            // if(Number(currentValue) !== NaN){
+            //     input.value += e.target.value
+            // }
+            
 
             if(e.target.tagName != "BUTTON"){
                 return
@@ -96,8 +107,8 @@ function tagGenrator(tag,attName,attValue,parent,text,value,event){
 
             let str = input.value;
             let index = str.length-1;
-
             
+
             if(str[index] == modularBtn.value){
                 return;
             }
@@ -115,7 +126,7 @@ function tagGenrator(tag,attName,attValue,parent,text,value,event){
             }
 
             if(e.target.classList[0] == "modularBtn"){
-                return input.value += modularBtn.value;
+                return input.value += modularBtn.value
             }
             if(e.target.classList[0] == "devideBtn" ){
                 input.value += devideBtn.value;
@@ -135,7 +146,7 @@ function tagGenrator(tag,attName,attValue,parent,text,value,event){
                 }
                 input.value = eval(input.value);
             }
-        })
+        }
     }
     return elemetn;
 }
