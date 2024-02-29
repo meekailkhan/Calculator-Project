@@ -20,7 +20,7 @@ const plusBtn = tagGenrator("button","class","plusBtn btn",calculator,"+","+");
 const zeroBtn = tagGenrator("button","class","zeroBtn btn",calculator,"0","0");
 const dZeroBtn = tagGenrator("button","class","dZeroBtn btn",calculator,"00","00");
 const doutBtn = tagGenrator("button","class","doutBtn btn",calculator,".",".")
-const equalBtn = tagGenrator("button","class","equalBtn",calculator,"=","=")
+const equalBtn = tagGenrator("button","class","equalBtn",calculator,"=")
 
 
 function tagGenrator(tag,attName,attValue,parent,text,value,event){
@@ -47,53 +47,54 @@ function tagGenrator(tag,attName,attValue,parent,text,value,event){
 
 
             
-
-            // let currentValue = e.target.value;
-
-            // if(Number(currentValue) !== NaN){
-            //     input.value += e.target.value
-            // }
             
-
+            let currentValue = e.target.value;
+            
             if(e.target.tagName != "BUTTON"){
                 return
             }
             console.log(e)
-
-            if(e.target.classList[0] == "seventBtn"){
-                input.value += seventBtn.value
+            
+            if(Object.is(Number(currentValue),NaN)===false){
+                input.value += e.target.value
             }
             
-            if(e.target.classList[0] == "eightBtn"){
-                input.value += eightBtn.value
-            }
-            if(e.target.classList[0] == "nineBtn"){
-                input.value += nineBtn.value
-            }
-            if(e.target.classList[0] == "fourBtn"){
-                input.value += fourBtn.value
-            }
-            if(e.target.classList[0] == "fiveBtn"){
-                input.value += fiveBtn.value
-            }
-            if(e.target.classList[0] == "sixBtn"){
-                input.value += sixBtn.value
-            }
-            if(e.target.classList[0] == "oneBtn"){
-                input.value += oneBtn.value
-            }
-            if(e.target.classList[0] == "twoBtn"){
-                input.value += twoBtn.value
-            }
-            if(e.target.classList[0] == "threeBtn"){
-                input.value += threeBtn.value
-            }
-            if(e.target.classList[0] == "zeroBtn"){
-                input.value += zeroBtn.value
-            }
-            if(e.target.classList[0] == "dZeroBtn"){
-                input.value += dZeroBtn.value
-            }
+
+
+            // if(e.target.classList[0] == "seventBtn"){
+            //     input.value += seventBtn.value
+            // }
+            
+            // if(e.target.classList[0] == "eightBtn"){
+            //     input.value += eightBtn.value
+            // }
+            // if(e.target.classList[0] == "nineBtn"){
+            //     input.value += nineBtn.value
+            // }
+            // if(e.target.classList[0] == "fourBtn"){
+            //     input.value += fourBtn.value
+            // }
+            // if(e.target.classList[0] == "fiveBtn"){
+            //     input.value += fiveBtn.value
+            // }
+            // if(e.target.classList[0] == "sixBtn"){
+            //     input.value += sixBtn.value
+            // }
+            // if(e.target.classList[0] == "oneBtn"){
+            //     input.value += oneBtn.value
+            // }
+            // if(e.target.classList[0] == "twoBtn"){
+            //     input.value += twoBtn.value
+            // }
+            // if(e.target.classList[0] == "threeBtn"){
+            //     input.value += threeBtn.value
+            // }
+            // if(e.target.classList[0] == "zeroBtn"){
+            //     input.value += zeroBtn.value
+            // }
+            // if(e.target.classList[0] == "dZeroBtn"){
+            //     input.value += dZeroBtn.value
+            // }
             if(e.target.classList[0]== "cancelBtn"){
                 input.value = ""
             }
@@ -109,43 +110,49 @@ function tagGenrator(tag,attName,attValue,parent,text,value,event){
             let index = str.length-1;
             
 
-            if(str[index] == modularBtn.value){
+            if(str[index] === modularBtn.value){
                 return;
             }
-            if(str[index] ==  devideBtn.value){
+            if(str[index] ===  devideBtn.value){
                 return;
             }
-            if(str[index] == multiBtn.value){
+            if(str[index] === multiBtn.value){
                 return;
             }
-            if(str[index] == subBtn.value){
+            if(str[index] === subBtn.value){
                 return;
             }
-            if(str[index] == plusBtn.value){
+            if(str[index] === plusBtn.value){
                 return;
             }
 
-            if(e.target.classList[0] == "modularBtn"){
-                return input.value += modularBtn.value
-            }
-            if(e.target.classList[0] == "devideBtn" ){
-                input.value += devideBtn.value;
-            }
-            if(e.target.classList[0] == "multiBtn"){
-                input.value += multiBtn.value;
-            }
-            if(e.target.classList[0] == "subBtn"){
-                input.value += subBtn.value;
-            }
-            if(e.target.classList[0] == "plusBtn"){
-                input.value += plusBtn.value;
-            }
-            if(e.target.classList[0] == "equalBtn"){
+            if(e.target.classList[0] === "equalBtn"){
                 if(input.value == ""){
                     input.value = "0";
                 }
                 input.value = eval(input.value);
             }
+
+            if(Object.is(Number(currentValue),NaN)===true){
+                input.value += e.target.value
+            }
+
+            // if(e.target.classList[0] === "modularBtn"){
+            //     return input.value += modularBtn.value
+            // }
+            // if(e.target.classList[0] === "devideBtn" ){
+            //     input.value += devideBtn.value;
+            // }
+            // if(e.target.classList[0] === "multiBtn"){
+            //     input.value += multiBtn.value;
+            // }
+            // if(e.target.classList[0] === "subBtn"){
+            //     input.value += subBtn.value;
+            // }
+            // if(e.target.classList[0] === "plusBtn"){
+            //     input.value += plusBtn.value;
+            // }
+            
         }
     }
     return elemetn;
