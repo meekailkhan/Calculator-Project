@@ -69,7 +69,6 @@ function tagGenrator(tag,attName,attValue,parent,text,value,event){
 
             let str = input.value;
             let index = str.length-1;
-            let lastIndex = str[index];
 
             if(Object.is(Number(str[index]),NaN)===true){
                 return;
