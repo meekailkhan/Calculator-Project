@@ -69,23 +69,12 @@ function tagGenrator(tag,attName,attValue,parent,text,value,event){
 
             let str = input.value;
             let index = str.length-1;
-            
+            let lastIndex = str[index];
 
-            if(str[index] === modularBtn.value){
+            if(Object.is(Number(str[index]),NaN)===true){
                 return;
             }
-            if(str[index] ===  devideBtn.value){
-                return;
-            }
-            if(str[index] === multiBtn.value){
-                return;
-            }
-            if(str[index] === subBtn.value){
-                return;
-            }
-            if(str[index] === plusBtn.value){
-                return;
-            }
+            
 
             if(e.target.classList[0] === "equalBtn"){
                 if(input.value == ""){
