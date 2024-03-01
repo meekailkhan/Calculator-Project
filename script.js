@@ -61,17 +61,17 @@ function tagGenrator(tag,attName,attValue,parent,text,value,event){
             if(e.target.classList[0]== "cancelBtn"){
                 input.value = ""
             }
-            if(e.target.classList[0] == "delBtn"){
-                let str = input.value;
-                input.value = str.substring(0, str.length - 1);
-            }
-            
-
             let str = input.value;
             let index = str.length-1;
 
+
+            if(e.target.classList[0] == "delBtn"){
+                input.value = str.substring(0, str.length - 1);
+            }
             if(Object.is(Number(str[index]),NaN)===true){
-                return;
+                input.value = str.substring(0, str.length - 1);
+                str[index-1] = currentValue
+                
             }
             
 
