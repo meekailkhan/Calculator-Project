@@ -52,8 +52,6 @@ function tagGenrator(tag,attName,attType,parent,text,value,event){
             if(e.target.tagName != "BUTTON"){
                 return
             }
-            console.dir(e.target)
-            console.log(e.target)
 
             
             if(Object.is(Number(currentValue),NaN)===false){
