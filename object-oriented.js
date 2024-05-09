@@ -1,22 +1,22 @@
-class TagGenrator{
-    constructor(tag, attName, attValue, parent, text, value){
+class TagGenrator {
+    constructor(tag, attName, attValue, parent, text, value) {
         this.element = document.createElement(tag)
-        
-        if(attName&&attValue){
-            this.element.setAttribute(attName,attValue)
+
+        if (attName && attValue) {
+            this.element.setAttribute(attName, attValue)
         }
-        if(parent){
+        if (parent) {
             parent.append(this.element)
         }
-        if(text){
+        if (text) {
             this.element.innerText = text
         }
-        if(value){
+        if (value) {
             this.element.value = value
         }
     }
 
-    getElement(){
+    getElement() {
         return this.element
     }
 }
@@ -47,47 +47,47 @@ const doutBtn = new TagGenrator("button", "class", "doutBtn btn", calculator, ".
 const equalBtn = new TagGenrator("button", "class", "equalBtn", calculator, "=").getElement();
 
 
-class eventClass{
-    handalClickEvent(e){
+class eventClass {
+    handalClickEvent(e) {
         this.e = e;
         this.e.preventDefault();
         this.e.stopPropagation();
-    
-    
+
+
         let currentValue = this.e.target.value;
-    
+
         if (this.e.target.tagName != "BUTTON") {
             return
         }
         console.log(e)
-    
-        if(Object.is(Number(currentValue), NaN) === false) {
+
+        if (Object.is(Number(currentValue), NaN) === false) {
             input.value += this.e.target.value
         }
-    
-    
+
+
         if (this.e.target.classList[0] == "cancelBtn") {
             input.value = ""
         }
         let str = input.value;
         let index = str.length - 1;
-    
-    
+
+
         if (this.e.target.classList[0] == "delBtn") {
             input.value = str.substring(0, str.length - 1);
         }
         else if (Object.is(Number(str[index]), NaN) === true) {
             return;
         }
-    
-    
+
+
         if (this.e.target.classList[0] === "equalBtn") {
             if (input.value == "") {
                 input.value = "0";
             }
             input.value = eval(input.value);
         }
-    
+
         if (Object.is(Number(currentValue), NaN) === true) {
             input.value += this.e.target.value
         }
