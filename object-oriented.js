@@ -49,30 +49,31 @@ const equalBtn = new TagGenrator("button", "class", "equalBtn", calculator, "=")
 
 class eventClass{
     handalClickEvent(e){
-        e.preventDefault();
-        e.stopPropagation();
+        this.e = e;
+        this.e.preventDefault();
+        this.e.stopPropagation();
     
     
-        let currentValue = e.target.value;
+        let currentValue = this.e.target.value;
     
-        if (e.target.tagName != "BUTTON") {
+        if (this.e.target.tagName != "BUTTON") {
             return
         }
         console.log(e)
     
         if(Object.is(Number(currentValue), NaN) === false) {
-            input.value += e.target.value
+            input.value += this.e.target.value
         }
     
     
-        if (e.target.classList[0] == "cancelBtn") {
+        if (this.e.target.classList[0] == "cancelBtn") {
             input.value = ""
         }
         let str = input.value;
         let index = str.length - 1;
     
     
-        if (e.target.classList[0] == "delBtn") {
+        if (this.e.target.classList[0] == "delBtn") {
             input.value = str.substring(0, str.length - 1);
         }
         else if (Object.is(Number(str[index]), NaN) === true) {
@@ -80,7 +81,7 @@ class eventClass{
         }
     
     
-        if (e.target.classList[0] === "equalBtn") {
+        if (this.e.target.classList[0] === "equalBtn") {
             if (input.value == "") {
                 input.value = "0";
             }
@@ -88,9 +89,9 @@ class eventClass{
         }
     
         if (Object.is(Number(currentValue), NaN) === true) {
-            input.value += e.target.value
+            input.value += this.e.target.value
         }
     }
 }
-let myFn = new eventClass().handalClickEvent
-calculatorContainer.addEventListener("click", myFn)
+let eventFn = new eventClass().handalClickEvent
+calculatorContainer.addEventListener("click", eventFn)
