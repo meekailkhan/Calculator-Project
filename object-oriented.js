@@ -93,5 +93,5 @@ class eventClass {
         }
     }
 }
-let eventFn = new eventClass().handalClickEvent
-calculatorContainer.addEventListener("click", eventFn)
+let eventFn = new eventClass();
+calculatorContainer.addEventListener("click", eventFn.handalClickEvent)
